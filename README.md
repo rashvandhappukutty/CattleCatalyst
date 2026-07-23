@@ -1,135 +1,350 @@
-# CattleCatalyst 🐄🌾
+# 🐄 CattleCatalyst
 
-CattleCatalyst is an advanced, production-ready, AI-powered breed recognition system for cattle and buffalo. Using deep learning architectures, the system analyzes livestock images to recognize distinct breeds instantly and provide actionable, detailed agricultural insights.
+<div align="center">
+
+### AI-Powered Cattle & Buffalo Breed Recognition System
+
+*An intelligent deep learning platform for livestock breed identification and agricultural insights.*
+
+![Python](https://img.shields.io/badge/Python-3.9+-blue)
+![React](https://img.shields.io/badge/React-18-61DAFB)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+</div>
 
 ---
 
-## 🏗️ Architecture & Folder Structure
+# 📖 Overview
 
-The project has been organized into a professional, modular directory structure separating frontend, backend, and machine learning operations:
+**CattleCatalyst** is an AI-powered livestock breed recognition system that uses deep learning to identify cattle and buffalo breeds from images. The platform provides real-time breed classification along with agricultural insights, making it suitable for researchers, farmers, veterinarians, and smart farming applications.
+
+The application combines a modern React frontend, a FastAPI backend, and a TensorFlow-based machine learning engine into a scalable architecture.
+
+---
+
+# ✨ Features
+
+- 🐄 AI-powered cattle & buffalo breed recognition
+- 📸 Drag-and-drop image upload
+- ⚡ Real-time image inference
+- 🧠 CNN with Attention Mechanism
+- 📊 Confidence score prediction
+- 📱 Modern responsive UI
+- 🚀 FastAPI REST API
+- 🔄 Easy model retraining pipeline
+- 📈 Evaluation with confusion matrix & metrics
+- 🌾 Designed for smart agriculture
+
+---
+
+# 🏗️ Project Structure
 
 ```text
 Cattle-Catalyst-main/
-│
-├── frontend/                  # React Vite TS Frontend Application
-│   ├── public/                # Static assets served directly
+
+├── frontend/
+│   ├── public/
 │   ├── src/
-│   │   ├── assets/            # App assets (images, icons, global styles)
-│   │   │   └── images/
-│   │   ├── components/        # Reusable React components
-│   │   │   ├── hero/          # Hero section components (e.g., PremiumHero)
-│   │   │   ├── navigation/    # Navigation headers
-│   │   │   ├── upload/        # Image drop and upload sections
-│   │   │   ├── results/       # Analysis and breed display
-│   │   │   ├── layout/        # General layout components
-│   │   │   └── ui/            # Shadcn UI low-level design primitives
-│   │   ├── hooks/             # Custom React hooks (e.g., use-toast, use-mobile)
-│   │   ├── pages/             # View pages (Index, NotFound)
-│   │   ├── services/          # API integration services (api.ts)
-│   │   ├── lib/               # Custom libraries and utility functions
-│   │   ├── App.tsx            # Main App routing and providers wrapper
-│   │   └── main.tsx           # React entry point
-│   ├── package.json           # Frontend dependencies & scripts
-│   ├── vite.config.ts         # Vite bundler configuration
-│   ├── tsconfig.json          # TypeScript configurations
-│   └── tailwind.config.ts     # Tailwind styling rules
+│   │   ├── assets/
+│   │   ├── components/
+│   │   │   ├── hero/
+│   │   │   ├── navigation/
+│   │   │   ├── upload/
+│   │   │   ├── results/
+│   │   │   ├── layout/
+│   │   │   └── ui/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── lib/
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── tailwind.config.ts
 │
-├── backend/                   # FastAPI Backend Server
-│   ├── main.py                # REST API entry point (endpoints, model loaders)
-│   └── requirements.txt       # Python backend dependencies
+├── backend/
+│   ├── main.py
+│   └── requirements.txt
 │
-├── ml/                        # Machine Learning Pipelines
-│   ├── training/              # Training scripts and preprocessing
-│   │   ├── train_model.py     # CNN Attention model training pipeline
-│   │   └── dataset_rgb.py     # Dataset channels preprocessing script
-│   ├── inference/             # Inference and testing code
-│   │   ├── inference.py       # Basic prediction test script
-│   │   └── evaluate_model.py  # Model metrics generation & matrix evaluator
-│   └── datasets/              # Local breed image training directories
+├── ml/
+│   ├── training/
+│   │   ├── train_model.py
+│   │   └── dataset_rgb.py
+│   ├── inference/
+│   │   ├── inference.py
+│   │   └── evaluate_model.py
+│   └── datasets/
 │
-├── docs/                      # Documentation resources
-└── README.md                  # Project landing documentation
+├── docs/
+│
+└── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+# 🚀 Getting Started
 
-### 1. Backend API Server Setup
-The backend runs on a **FastAPI** framework and loads the trained `.h5` model to perform real-time breed inferences.
+## 1️⃣ Clone the Repository
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   # On Windows:
-   venv\Scripts\activate
-   # On macOS/Linux:
-   source venv/bin/activate
-   ```
-3. Install required Python packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Start the backend server:
-   ```bash
-   python main.py
-   ```
-   The API will be available at `http://localhost:8000`.
+```bash
+git clone https://github.com/<your-username>/CattleCatalyst.git
+
+cd CattleCatalyst
+```
 
 ---
 
-### 2. Frontend React Client Setup
-The client-side interface is built with **React, Vite, TypeScript, and Tailwind CSS**.
+# 🖥 Backend Setup
 
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
-2. Install npm dependencies:
-   ```bash
-   npm install
-   ```
-3. Run the Vite development server:
-   ```bash
-   npm run dev
-   ```
-   Open `http://localhost:8080` (or the console printed port) in your web browser.
+Navigate to the backend directory.
+
+```bash
+cd backend
+```
+
+Create a virtual environment.
+
+```bash
+python -m venv venv
+```
+
+Activate it.
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### macOS/Linux
+
+```bash
+source venv/bin/activate
+```
+
+Install dependencies.
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the FastAPI server.
+
+```bash
+python main.py
+```
+
+Server:
+
+```
+http://localhost:8000
+```
 
 ---
 
-## 🧠 Machine Learning Engine
+# 💻 Frontend Setup
 
-The ML subsystem uses an **Enhanced Convolutional Neural Network (CNN)** with integrated **Channel and Spatial Attention Blocks** to extract local structural features (such as horns, snout curvature, hump shape, and ear length) to reach high classification accuracy.
+Navigate to the frontend folder.
 
-- **Supported Breeds**: Gir, Murrah, Sahiwal, and others.
-- **Model checkpoints**: Model saves its weights to `breed_model.h5` inside the `models` directory.
-- **Data Augmentation**: Enhances training using rotation, brightness variations, zooms, and horizontal flips.
-- **Training pipeline**:
-  To start a training run:
-  ```bash
-  python ml/training/train_model.py
-  ```
-- **Evaluation pipeline**:
-  Generate accuracy reports and confusion matrices:
-  ```bash
-  python ml/inference/evaluate_model.py
-  ```
+```bash
+cd frontend
+```
+
+Install packages.
+
+```bash
+npm install
+```
+
+Start development server.
+
+```bash
+npm run dev
+```
+
+Frontend:
+
+```
+http://localhost:8080
+```
 
 ---
 
-## 🛠️ Tech Stack
+# 🧠 Machine Learning Pipeline
 
-- **Frontend**: React 18, Vite, TypeScript, Tailwind CSS, Framer Motion, Radix UI Primitives, Lucide Icons, Shadcn/ui.
-- **Backend**: Python 3.9+, FastAPI, Uvicorn, TensorFlow / Keras, NumPy, Pillow.
-- **ML & Data Analysis**: TensorFlow 2.x, Scikit-Learn, Matplotlib, Seaborn, PIL.
+The ML engine is built using an Enhanced Convolutional Neural Network (CNN) integrated with Channel Attention and Spatial Attention mechanisms.
+
+The model extracts unique visual characteristics including:
+
+- Horn shape
+- Ear length
+- Face structure
+- Snout curvature
+- Coat texture
+- Hump size
+- Body profile
+
+Supported breeds include:
+
+- Gir
+- Murrah
+- Sahiwal
+- Jersey
+- Holstein Friesian
+- Indigenous breeds
+- Additional custom classes
 
 ---
 
-## 📄 License & Attributions
+## Train Model
 
-This project is prepared for modern agricultural research and smart-farming applications. All breed images, templates, and dataset parameters are properties of their respective researchers and annotators.
-# CattleCatalyst
+```bash
+python ml/training/train_model.py
+```
+
+---
+
+## Evaluate Model
+
+```bash
+python ml/inference/evaluate_model.py
+```
+
+---
+
+# 📊 Model Features
+
+- CNN Architecture
+- Attention Mechanism
+- TensorFlow/Keras
+- Image Augmentation
+- Dropout Regularization
+- Batch Normalization
+- Early Stopping
+- Model Checkpointing
+
+Saved model:
+
+```
+models/breed_model.h5
+```
+
+---
+
+# 🔌 API Endpoints
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/` | Health Check |
+| POST | `/predict` | Predict Breed |
+| GET | `/docs` | Swagger UI |
+| GET | `/redoc` | API Documentation |
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Radix UI
+- shadcn/ui
+- Lucide Icons
+
+## Backend
+
+- FastAPI
+- Python
+- TensorFlow
+- NumPy
+- Pillow
+- Uvicorn
+
+## Machine Learning
+
+- TensorFlow
+- Keras
+- Scikit-Learn
+- OpenCV
+- Matplotlib
+- Seaborn
+
+---
+
+# 🌾 Applications
+
+- Smart Farming
+- Livestock Monitoring
+- Veterinary Assistance
+- Breed Authentication
+- Dairy Farm Automation
+- Agricultural Research
+- Animal Husbandry
+
+---
+
+# 📈 Future Enhancements
+
+- Mobile Application
+- Cloud Deployment
+- Multi-Animal Detection
+- Disease Detection
+- Weight Estimation
+- Age Prediction
+- Milk Yield Prediction
+- Offline Edge AI Support
+- Farmer Dashboard
+- Analytics Portal
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+
+2. Create a feature branch
+
+```bash
+git checkout -b feature/new-feature
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push to GitHub
+
+```bash
+git push origin feature/new-feature
+```
+
+5. Open a Pull Request
+
+---
+
+# 📄 License
+
+This project is intended for educational, agricultural research, and smart farming applications.
+
+Please ensure proper attribution for datasets, pretrained models, and third-party assets.
+
+---
+
+<div align="center">
+
+**Made with ❤️ using React, FastAPI & TensorFlow**
+
+**Empowering Smart Agriculture Through Artificial Intelligence 🌾🐄**
+
+</div>
